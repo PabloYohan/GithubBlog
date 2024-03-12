@@ -6,4 +6,8 @@ Esta é uma aplicação em formato de blog, utilizando a api do github para simu
 
 ## Clone do projeto
 
+Clone o repositório via git ou faça uma cópia em sua máquina
+
+## Instale as dependencias
+
 
