@@ -1,10 +1,12 @@
 import { Outlet } from 'react-router-dom'
+import { HeaderContainer } from './styles'
+import Cover from '../../assets/Cover.svg'
 
 export function DefaultLayout() {
   return (
-    <div>
-      <div>Hello world</div>
+    <>
+      <HeaderContainer src={Cover} alt="" />
       <Outlet />
-    </div>
+    </>
   )
 }
