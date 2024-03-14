@@ -10,3 +10,10 @@ export const HomeContainer = styled.div`
 export const ContentContainer = styled.div`
   width: 54rem;
 `
+
+export const PostsSummaryContainer = styled.div`
+  margin-top: 3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto auto;
+`
