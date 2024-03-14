@@ -23,5 +23,10 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Nunito";
     background-color: ${(props) => props.theme['base-background']};
+
+    :focus {
+      outline: 0;
+      box-shadow: 0 0 0 2px ${(props) => props.theme.blue};
+    }
   }
 `

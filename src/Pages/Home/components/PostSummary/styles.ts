@@ -25,7 +25,8 @@ export const PostSummaryContainer = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   gap: 1rem;
-  h3 {
+  a {
+    text-decoration: none;
     width: 17.75rem;
     font-size: 1.25rem;
     font-weight: bold;
