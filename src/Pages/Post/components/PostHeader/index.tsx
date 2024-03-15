@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  LinkContainer,
   PostHeaderContainer,
   PostInfomation,
   PostLinks,
@@ -13,19 +12,20 @@ import {
   faComment,
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { NavLink } from 'react-router-dom'
 
 export function PostHeader() {
   return (
     <PostHeaderContainer>
       <PostLinks>
-        <LinkContainer href="#">
+        <NavLink to="/">
           <FontAwesomeIcon icon={faChevronLeft} />
           <span>VOLTAR</span>
-        </LinkContainer>
-        <LinkContainer href="#">
+        </NavLink>
+        <a href="#">
           <span>VER NO GITHUB</span>
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-        </LinkContainer>
+        </a>
       </PostLinks>
       <PostTitle>JavaScript data types and data structures</PostTitle>
       <PostInfomation>

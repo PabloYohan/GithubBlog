@@ -14,6 +14,15 @@ export const PostHeaderContainer = styled.div`
 export const PostLinks = styled.div`
   display: flex;
   justify-content: space-between;
+  a {
+    text-decoration: none;
+    display: flex;
+    color: ${(props) => props.theme.blue};
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
 `
 
 export const PostTitle = styled.h2`
@@ -21,16 +30,6 @@ export const PostTitle = styled.h2`
   font-weight: bold;
   color: ${(props) => props.theme['base-title']};
   margin-top: 0.75rem;
-`
-
-export const LinkContainer = styled.a`
-  text-decoration: none;
-  display: flex;
-  color: ${(props) => props.theme.blue};
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem;
-  font-weight: bold;
 `
 
 export const PostInfomation = styled.div`
