@@ -45,6 +45,7 @@ export const UserSummary = styled.div`
   p {
     color: ${(props) => props.theme['base-text']};
     font-size: 1rem;
+    min-height: 3.25rem;
   }
 `
 export const UserInformation = styled.div`

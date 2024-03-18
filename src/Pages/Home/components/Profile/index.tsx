@@ -11,35 +11,40 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { useContext } from 'react'
+import { HomeContext } from '../../../../contexts/HomeContext'
 
 export function Profile() {
+  const homeContext = useContext(HomeContext)
+
+  const githubInfos = homeContext.githubInfos
+
+  console.log(githubInfos)
+
   return (
     <MainCotainer>
       <ProfileContainer>
-        <img src="https://github.com/PabloYohan.png" alt="" />
+        <img src={githubInfos.avatar_url} alt="" />
         <UserSummary>
-          <h1>Pablo Yohan</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem
-            molestiae accusamus deserunt illo dolorum, rem quia soluta atque in
-          </p>
+          <h1>{githubInfos.name}</h1>
+          <p>{githubInfos.bio}</p>
           <UserInformation>
             <div>
               <FontAwesomeIcon icon={faGithub} />
-              <span>PabloYohan</span>
+              <span>{githubInfos.login}</span>
             </div>
             <div>
               <FontAwesomeIcon icon={faBuilding} />
-              <span>Embraer</span>
+              <span>{githubInfos.company}</span>
             </div>
             <div>
               <FontAwesomeIcon icon={faUserGroup} />
-              <span>32 Seguidores</span>
+              <span>{githubInfos.followers} Seguidores</span>
             </div>
           </UserInformation>
         </UserSummary>
       </ProfileContainer>
-      <a href="#">
+      <a href={githubInfos.html_url} target="_blank" rel="noreferrer">
         <span>GITHUB</span>
         <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
       </a>

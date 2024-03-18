@@ -1,13 +1,10 @@
-import { NavLink } from 'react-router-dom'
 import { PostSummaryContainer, TitleContainer } from './styles'
 
 export function PostSummary() {
   return (
-    <PostSummaryContainer>
+    <PostSummaryContainer to="/post/1">
       <TitleContainer>
-        <NavLink to="/post/1">
-          JavaScript data types and data structures
-        </NavLink>
+        <h3>JavaScript data types and data structures</h3>
         <span>Há 1 dia</span>
       </TitleContainer>
       <p>

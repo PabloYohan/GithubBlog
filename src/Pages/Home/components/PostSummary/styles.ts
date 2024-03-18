@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
-export const PostSummaryContainer = styled.div`
+export const PostSummaryContainer = styled(NavLink)`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -9,6 +10,11 @@ export const PostSummaryContainer = styled.div`
   border-radius: 10px;
   padding: 2rem;
   background-color: ${(props) => props.theme['base-post']};
+  text-decoration: none;
+
+  &:hover {
+    border: 2px solid ${(props) => props.theme['base-label']};
+  }
 
   p {
     text-overflow: ellipsis;
@@ -25,7 +31,7 @@ export const PostSummaryContainer = styled.div`
 export const TitleContainer = styled.div`
   display: flex;
   gap: 1rem;
-  a {
+  h3 {
     text-decoration: none;
     width: 17.75rem;
     font-size: 1.25rem;

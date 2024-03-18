@@ -1,3 +1,4 @@
+import { HomeProvider } from '../../contexts/HomeContext'
 import { PostSummary } from './components/PostSummary'
 import { Profile } from './components/Profile'
 import { SearchForm } from './components/SearchForm'
@@ -9,16 +10,18 @@ import {
 
 export function Home() {
   return (
-    <HomeContainer>
-      <ContentContainer>
-        <Profile />
-        <SearchForm />
-        <PostsSummaryContainer>
-          <PostSummary />
-          <PostSummary />
-          <PostSummary />
-        </PostsSummaryContainer>
-      </ContentContainer>
-    </HomeContainer>
+    <HomeProvider>
+      <HomeContainer>
+        <ContentContainer>
+          <Profile />
+          <SearchForm />
+          <PostsSummaryContainer>
+            <PostSummary />
+            <PostSummary />
+            <PostSummary />
+          </PostsSummaryContainer>
+        </ContentContainer>
+      </HomeContainer>
+    </HomeProvider>
   )
 }
