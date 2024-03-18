@@ -1,4 +1,5 @@
-import { HomeProvider } from '../../contexts/HomeContext'
+import { useContext } from 'react'
+import { HomeContext } from '../../contexts/HomeContext'
 import { PostSummary } from './components/PostSummary'
 import { Profile } from './components/Profile'
 import { SearchForm } from './components/SearchForm'
@@ -9,19 +10,23 @@ import {
 } from './styles'
 
 export function Home() {
+  const homeContext = useContext(HomeContext)
+
+  const posts = homeContext.postsSummary
+
+  console.log(posts)
+
   return (
-    <HomeProvider>
-      <HomeContainer>
-        <ContentContainer>
-          <Profile />
-          <SearchForm />
-          <PostsSummaryContainer>
-            <PostSummary />
-            <PostSummary />
-            <PostSummary />
-          </PostsSummaryContainer>
-        </ContentContainer>
-      </HomeContainer>
-    </HomeProvider>
+    <HomeContainer>
+      <ContentContainer>
+        <Profile />
+        <SearchForm />
+        <PostsSummaryContainer>
+          {posts.map((post) => {
+            return <PostSummary key={post.id} data={post} />
+          })}
+        </PostsSummaryContainer>
+      </ContentContainer>
+    </HomeContainer>
   )
 }

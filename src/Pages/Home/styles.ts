@@ -9,6 +9,7 @@ export const HomeContainer = styled.div`
 
 export const ContentContainer = styled.div`
   width: 54rem;
+  margin-bottom: 14rem;
 `
 
 export const PostsSummaryContainer = styled.div`

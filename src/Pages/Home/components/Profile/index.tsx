@@ -19,8 +19,6 @@ export function Profile() {
 
   const githubInfos = homeContext.githubInfos
 
-  console.log(githubInfos)
-
   return (
     <MainCotainer>
       <ProfileContainer>

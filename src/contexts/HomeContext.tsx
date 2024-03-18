@@ -13,8 +13,9 @@ interface GithubInfoProps {
 
 interface PostSummaryProps {
   title: string
-  text: string
+  body: string
   created_at: string
+  id: number
 }
 
 interface HomeContextType {
@@ -45,14 +46,8 @@ export function HomeProvider({ children }: HomeProviderProps) {
   const fetchGithubInfos = async () => {
     const response = await userApi.get('/PabloYohan')
 
-    console.log(response)
-
     setGithubInfos(response.data)
   }
-
-  useEffect(() => {
-    fetchGithubInfos()
-  }, [])
 
   const fetchPosts = async (query?: string) => {
     const response = await issuesApi.get('/issues', {
@@ -61,8 +56,13 @@ export function HomeProvider({ children }: HomeProviderProps) {
       },
     })
 
-    setPostsSummary(response.data)
+    setPostsSummary(response.data.items)
   }
+
+  useEffect(() => {
+    fetchGithubInfos()
+    fetchPosts('')
+  }, [])
 
   return (
     <HomeContext.Provider value={{ githubInfos, postsSummary, fetchPosts }}>

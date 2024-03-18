@@ -16,7 +16,7 @@ export const PostSummaryContainer = styled(NavLink)`
     border: 2px solid ${(props) => props.theme['base-label']};
   }
 
-  p {
+  span {
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
