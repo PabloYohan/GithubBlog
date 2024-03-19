@@ -13,8 +13,31 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { NavLink } from 'react-router-dom'
+import { formatDistanceToNow } from 'date-fns'
+import { ptBR } from 'date-fns/locale/pt-BR'
 
-export function PostHeader() {
+interface User {
+  login: string
+}
+interface IssueDataType {
+  body: string
+  title: string
+  comments: number
+  html_url: string
+  created_at: string
+  user: User
+}
+interface PostHeaderProps {
+  data: IssueDataType
+}
+export function PostHeader({ data }: PostHeaderProps) {
+  console.log(data)
+
+  const createdDiference = formatDistanceToNow(new Date(data.created_at), {
+    addSuffix: true,
+    locale: ptBR,
+  })
+
   return (
     <PostHeaderContainer>
       <PostLinks>
@@ -22,24 +45,24 @@ export function PostHeader() {
           <FontAwesomeIcon icon={faChevronLeft} />
           <span>VOLTAR</span>
         </NavLink>
-        <a href="#">
+        <a href={data.html_url} target="_blank" rel="noreferrer">
           <span>VER NO GITHUB</span>
           <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
         </a>
       </PostLinks>
-      <PostTitle>JavaScript data types and data structures</PostTitle>
+      <PostTitle>{data.title}</PostTitle>
       <PostInfomation>
         <div>
           <FontAwesomeIcon icon={faGithub} />
-          <span>PabloYohan</span>
+          <span>{data.user.login}</span>
         </div>
         <div>
           <FontAwesomeIcon icon={faCalendar} />
-          <span>Há 1 dia</span>
+          <span>{createdDiference}</span>
         </div>
         <div>
           <FontAwesomeIcon icon={faComment} />
-          <span>5 comentários</span>
+          <span>{data.comments} comentários</span>
         </div>
       </PostInfomation>
     </PostHeaderContainer>

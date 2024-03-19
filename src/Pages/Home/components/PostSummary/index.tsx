@@ -7,6 +7,7 @@ interface PostSummaryType {
   title: string
   body: string
   created_at: string
+  number: number
 }
 
 interface PostSummaryProps {
@@ -20,7 +21,7 @@ export function PostSummary({ data }: PostSummaryProps) {
   })
 
   return (
-    <PostSummaryContainer to="/post/1">
+    <PostSummaryContainer to={`/post/${data.number}`}>
       <TitleContainer>
         <h3>{data.title}</h3>
         <span>{createdDiference}</span>
