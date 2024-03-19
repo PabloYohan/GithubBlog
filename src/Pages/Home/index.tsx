@@ -14,8 +14,6 @@ export function Home() {
 
   const posts = homeContext.postsSummary
 
-  console.log(posts)
-
   return (
     <HomeContainer>
       <ContentContainer>

@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useEffect, useState } from 'react'
-import { issuesApi, userApi } from '../libs/axios'
+import { issuesSearchApi, userApi } from '../libs/axios'
 
 interface GithubInfoProps {
   login: string
@@ -16,6 +16,7 @@ interface PostSummaryProps {
   body: string
   created_at: string
   id: number
+  number: number
 }
 
 interface HomeContextType {
@@ -50,7 +51,7 @@ export function HomeProvider({ children }: HomeProviderProps) {
   }
 
   const fetchPosts = async (query?: string) => {
-    const response = await issuesApi.get('/issues', {
+    const response = await issuesSearchApi.get('/issues', {
       params: {
         q: `${query}repo:PabloYohan/GithubBlog`,
       },
