@@ -53,9 +53,10 @@ export function HomeProvider({ children }: HomeProviderProps) {
   const fetchPosts = async (query?: string) => {
     const response = await issuesSearchApi.get('/issues', {
       params: {
-        q: `${query}repo:PabloYohan/GithubBlog`,
+        q: `${query} repo:PabloYohan/GithubBlog`,
       },
     })
+    console.log(response)
 
     setPostsSummary(response.data.items)
   }
