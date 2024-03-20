@@ -1,11 +1,9 @@
 # Desafio Github Blog
 
-Um desafio feito na trilha de React da Rocketseat
+Desafio da trilha de React da plataforma de ensino da Rocketseat <br>
 Esta é uma aplicação em formato de blog, utilizando a api do github para simular posts a partir de issues do projeto
 
 ## Tecnologias
-
-Tecnologias utilizadas nesse projeto
 
 - [React JS](https://pt-br.reactjs.org/)
 - [Vite JS](https://vitejs.dev/)
@@ -13,25 +11,30 @@ Tecnologias utilizadas nesse projeto
 - [Styled Components](https://styled-components.com/)
 - [Axios](https://axios-http.com/)
 
+
 ## Iniciando o Projeto
 
-**Clone o repositório em sua máquina**
+**Clone o Projeto**
 
 ```bash
 $ git clone https://github.com/PabloYohan/GithubBlog.git
 ```
 
+
+
+**Vá para a Pasta do Projeto**
+
 ```bash
-$ cd github-blog
+$ cd GithubBlog
 ```
 
-**Instale as dependencias do projeto**
+**Instale as dependencias do Projeto**
 
 ```bash
 $ npm i
 ```
 
- **Rode o projeto**
+**Agora só rodar 😄**
 ```bash
 $ npm run dev
 ```
